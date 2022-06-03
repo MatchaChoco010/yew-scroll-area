@@ -1,0 +1,11 @@
+[workspace]
+members = [
+  "app",
+  "app-post-build",
+]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "z"
