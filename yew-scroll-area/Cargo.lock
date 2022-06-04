@@ -714,9 +714,9 @@ dependencies = [
 
 [[package]]
 name = "yew-style-in-rs"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "328c3e9709161f8412bd3b43968804adb9c9e7485175a01c4ad9ca499a09c694"
+checksum = "2aadc79ecf70f41d332398ead6f991c53d82c8da4a2fd927f9d103a9a950d843"
 dependencies = [
  "anyhow",
  "fastrand",
@@ -731,15 +731,15 @@ dependencies = [
 
 [[package]]
 name = "yew-style-in-rs-core"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a90647d6b98d9ec6572dab61a4c8c2725d4e34136b7069e46b9dd2ddf16d34c0"
+checksum = "151638a09d9c3ab94faf87c5d8c98984f6c42edc9f6e5c9affe94e7241bf35a8"
 
 [[package]]
 name = "yew-style-in-rs-macro"
-version = "0.4.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc1002f7d740e6ce7ba04a23de9f6cd14899f444930854f4db7ccb8c9efe07eb"
+checksum = "d94b48600e4ed31240bd4c7e322d39fba76fee591533ee45633ff0e6fb606643"
 dependencies = [
  "anyhow",
  "fastrand",
