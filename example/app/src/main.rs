@@ -186,20 +186,20 @@ fn app() -> Html {
         "#};
     }
     html! {
-            <div class={css}>
-                <ScrollArea vertical=true width={10.0}>
-                    <section>
-                        <h1>{"yew-scroll-area"}</h1>
-                        <p>{"A scroll area component for yew."}</p>
-                        <h2>{"Usage"}</h2>
-                        <p>
-                            {"If you want scrollbars, simply surround the item you want to scroll with a "}
-                            <code>{"<ScrollArea></ScrollArea>"}</code>
-                            {" component."}
-                        </p>
-                        <pre>
-                            <code class="language-rust">
-                                {
+        <div class={css}>
+            <ScrollArea vertical=true width={10.0}>
+                <section>
+                    <h1>{"yew-scroll-area"}</h1>
+                    <p>{"A scroll area component for yew."}</p>
+                    <h2>{"Usage"}</h2>
+                    <p>
+                        {"If you want scrollbars, simply surround the item you want to scroll with a "}
+                        <code>{"<ScrollArea></ScrollArea>"}</code>
+                        {" component."}
+                    </p>
+                    <pre>
+                        <code class="language-rust">
+                            {
 r#"#[function_component(App)]
 fn app() -> Html {
     html!{
@@ -210,31 +210,31 @@ fn app() -> Html {
         </div>
     }
 }"#
-                                }
-                            </code>
-                        </pre>
-                        <p>
-                            {"The "}
-                            <code>{"<ScrollArea></ScrollArea>"}</code>
-                            {" component will be 100% of the width and height of the parent element and will allow scrolling for any child elements that extend beyond it."}
-                        </p>
-                        <p>
-                            {"The "}
-                            <code>{"<ScrollArea></ScrollArea>"}</code>
-                            {" component is styled using yew-style-in-rs."}
-                            {"In other words, you need to copy and place style.css from the build artifact."}
-                        </p>
-                    </section>
-                    <section>
-                        <h1>{"Display of vertical scrollbars"}</h1>
-                        <p>
-                            {"Add "}
-                            <code>{"vertical=true"}</code>
-                            {" if you want to use vertical scrollbars."}
-                        </p>
-                        <pre>
-                            <code class="language-rust">
-                                {
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        {"The "}
+                        <code>{"<ScrollArea></ScrollArea>"}</code>
+                        {" component will be 100% of the width and height of the parent element and will allow scrolling for any child elements that extend beyond it."}
+                    </p>
+                    <p>
+                        {"The "}
+                        <code>{"<ScrollArea></ScrollArea>"}</code>
+                        {" component is styled using yew-style-in-rs."}
+                        {"In other words, you need to copy and place style.css from the build artifact."}
+                    </p>
+                </section>
+                <section>
+                    <h1>{"Display of vertical scrollbars"}</h1>
+                    <p>
+                        {"Add "}
+                        <code>{"vertical=true"}</code>
+                        {" if you want to use vertical scrollbars."}
+                    </p>
+                    <pre>
+                        <code class="language-rust">
+                            {
 r#"#[function_component(App)]
 fn app() -> Html {
     html!{
@@ -245,508 +245,223 @@ fn app() -> Html {
         </div>
     }
 }"#
-                                }
-                            </code>
-                        </pre>
-                        <section class="test-area-vertical">
-                            <ScrollArea vertical=true>
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                            </ScrollArea>
-                        </section>
+                            }
+                        </code>
+                    </pre>
+                    <section class="test-area-vertical">
+                        <ScrollArea vertical=true>
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                        </ScrollArea>
                     </section>
-                    <section>
-                        <h1>{"Display of horizontal scrollbars"}</h1>
-                        <p>
-                            {"Add "}
-                            <code>{"horizontal=true"}</code>
-                            {" if you want to use horizontal scrollbars."}
-                        </p>
-                        <pre>
-                            <code class="language-rust">
-                                {
-    r#"#[function_component(App)]
-    fn app() -> Html {
-        html!{
-            <div style="width: 100%; height: 100%;">
-                <ScrollArea horizontal=true>
-                    { contents here ... }
-                </ScrollArea>
-            </div>
-        }
-    }"#
-                                }
-                            </code>
-                        </pre>
-                        <section class="test-area-horizontal">
-                            <ScrollArea horizontal=true>
-                                <div class="test-area-horizontal-inner">
-                                    <div class="test-area-horizontal-item">
-                                        <h1>{"Test Area"}</h1>
-                                        <p>{"This is a scrollable area."}</p>
-                                    </div>
-                                    <div class="test-area-horizontal-item">
-                                        <h1>{"Test Area"}</h1>
-                                        <p>{"This is a scrollable area."}</p>
-                                    </div>
-                                    <div class="test-area-horizontal-item">
-                                        <h1>{"Test Area"}</h1>
-                                        <p>{"This is a scrollable area."}</p>
-                                    </div>
-                                    <div class="test-area-horizontal-item">
-                                        <h1>{"Test Area"}</h1>
-                                        <p>{"This is a scrollable area."}</p>
-                                    </div>
-                                </div>
-                            </ScrollArea>
-                        </section>
-                    </section>
-                    <section>
-                        <h1>{"Display of scrollbars in both vertical and horizontal directions"}</h1>
-                        <p>
-                            {"Add "}
-                            <code>{"vertical=true"}</code>
-                            {" and "}
-                            <code>{"horizontal=true"}</code>
-                            {" if you want to use vertical and horizontal scrollbars."}
-                        </p>
-                        <pre>
-                            <code class="language-rust">
-                                {
-    r#"#[function_component(App)]
-    fn app() -> Html {
-        html!{
-            <div style="width: 100%; height: 100%;">
-                <ScrollArea vertical=true horizontal=true>
-                    { contents here ... }
-                </ScrollArea>
-            </div>
-        }
-    }"#
-                                }
-                            </code>
-                        </pre>
-                        <section class="test-area-vertical-and-horizontal">
-                            <ScrollArea vertical=true horizontal=true>
-                                <div class="test-area-vertical-and-horizontal-inner">
-                                    <div class="test-area-vertical-and-horizontal-row">
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                    </div>
-                                    <div class="test-area-vertical-and-horizontal-row">
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                    </div>
-                                    <div class="test-area-vertical-and-horizontal-row">
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                    </div>
-                                    <div class="test-area-vertical-and-horizontal-row">
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                        <div class="test-area-vertical-and-horizontal-item">
-                                            <h1>{"Test Area"}</h1>
-                                            <p>{"This is a scrollable area."}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ScrollArea>
-                        </section>
-                    </section>
-                    <section>
-                        <h1>{"Colorize of scrollbar"}</h1>
-                        <p>
-                            {"Add "}
-                            <code>{"color={Color::rgba(128, 255, 0, 0.8)}"}</code>
-                            {" if you want to colorize scrollbars."}
-                        </p>
-                        <pre>
-                            <code class="language-rust">
-                                {
+                </section>
+                <section>
+                    <h1>{"Display of horizontal scrollbars"}</h1>
+                    <p>
+                        {"Add "}
+                        <code>{"horizontal=true"}</code>
+                        {" if you want to use horizontal scrollbars."}
+                    </p>
+                    <pre>
+                        <code class="language-rust">
+                            {
 r#"#[function_component(App)]
 fn app() -> Html {
     html!{
         <div style="width: 100%; height: 100%;">
-            <ScrollArea vertical=true color={Color::rgba(128, 255, 0, 0.8)}>
+            <ScrollArea horizontal=true>
                 { contents here ... }
             </ScrollArea>
         </div>
     }
 }"#
-                                }
-                            </code>
-                        </pre>
-                        <div class="test-area-color">
-                            <section class="test-area-color-0">
-                                <ScrollArea vertical=true  color={Color::rgba(128, 255, 0, 0.8)}>
+                            }
+                        </code>
+                    </pre>
+                    <section class="test-area-horizontal">
+                        <ScrollArea horizontal=true>
+                            <div class="test-area-horizontal-inner">
+                                <div class="test-area-horizontal-item">
                                     <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
                                     <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
+                                </div>
+                                <div class="test-area-horizontal-item">
                                     <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
                                     <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
+                                </div>
+                                <div class="test-area-horizontal-item">
                                     <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
                                     <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
+                                </div>
+                                <div class="test-area-horizontal-item">
                                     <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
                                     <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                </ScrollArea>
-                            </section>
-                            <section class="test-area-color-1">
-                                <ScrollArea vertical=true color={Color::black()}>
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                </ScrollArea>
-                            </section>
-                            <section class="test-area-color-2">
-                                <ScrollArea vertical=true color={Color::white()}>
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <p>{"This is a scrollable area."}</p>
-                                    <br />
-                                    <br />
-                                    <br />
-                                    <h1>{"Test Area"}</h1>
-                                </ScrollArea>
-                            </section>
-                        </div>
+                                </div>
+                            </div>
+                        </ScrollArea>
                     </section>
-                    <section>
-                        <h1>{"Other property of scrollbars"}</h1>
-                        <p>
-                            {"Add attributes "}
-                            <code>{"width"}</code>
-                            {", "}
-                            <code>{"round"}</code>
-                            {", "}
-                            <code>{"hide_time"}</code>
-                            {" and "}
-                            <code>{"smooth_time"}</code>
-                            {" for styling scrollbars."}
-                        </p>
-                        <pre>
-                            <code class="language-rust">
-                                {
+                </section>
+                <section>
+                    <h1>{"Display of scrollbars in both vertical and horizontal directions"}</h1>
+                    <p>
+                        {"Add "}
+                        <code>{"vertical=true"}</code>
+                        {" and "}
+                        <code>{"horizontal=true"}</code>
+                        {" if you want to use vertical and horizontal scrollbars."}
+                    </p>
+                    <pre>
+                        <code class="language-rust">
+                            {
 r#"#[function_component(App)]
 fn app() -> Html {
     html!{
         <div style="width: 100%; height: 100%;">
-            <ScrollArea vertical=true width={4.0} round=false hide_time={0.5} smooth_time={0.3}>
+            <ScrollArea vertical=true horizontal=true>
                 { contents here ... }
             </ScrollArea>
         </div>
     }
 }"#
-                                }
-                            </code>
-                        </pre>
-                        <div class="test-area-style-inputs">
-                            <div>
-                                <label for="width">{"width"}</label>
-                                <input
-                                    id="width"
-                                    type="range" value={width.to_string()}
-                                    min="0.0" max="40.0" step="0.01"
-                                    oninput={
-                                        let width = width.clone();
-                                        Callback::from(move |e: InputEvent| {
-                                            let target = e.target().unwrap();
-                                            let target: HtmlInputElement = target.dyn_into().unwrap();
-                                            let value = target.value().parse::<f64>().unwrap();
-                                            width.set(value);
-                                        })
-                                    }
-                                />
-                                {*width}
+                            }
+                        </code>
+                    </pre>
+                    <section class="test-area-vertical-and-horizontal">
+                        <ScrollArea vertical=true horizontal=true>
+                            <div class="test-area-vertical-and-horizontal-inner">
+                                <div class="test-area-vertical-and-horizontal-row">
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                </div>
+                                <div class="test-area-vertical-and-horizontal-row">
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                </div>
+                                <div class="test-area-vertical-and-horizontal-row">
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                </div>
+                                <div class="test-area-vertical-and-horizontal-row">
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                    <div class="test-area-vertical-and-horizontal-item">
+                                        <h1>{"Test Area"}</h1>
+                                        <p>{"This is a scrollable area."}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="round">{"round"}</label>
-                                <input
-                                    id="round"
-                                    type="checkbox"
-                                    checked={*round}
-                                    oninput={
-                                        let round = round.clone();
-                                        Callback::from(move |e: InputEvent| {
-                                            let target = e.target().unwrap();
-                                            let target: HtmlInputElement = target.dyn_into().unwrap();
-                                            let value = target.checked();
-                                            round.set(value);
-                                        })
-                                    }
-                                />
-                            </div>
-                            <div>
-                                <label for="hide_time">{"hide_time"}</label>
-                                <input
-                                    id="hide_time"
-                                    type="range" value={hide_time.to_string()}
-                                    min="0.0" max="10.0" step="0.01"
-                                    oninput={
-                                        let hide_time = hide_time.clone();
-                                        Callback::from(move |e: InputEvent| {
-                                            let target = e.target().unwrap();
-                                            let target: HtmlInputElement = target.dyn_into().unwrap();
-                                            let value = target.value().parse::<f64>().unwrap();
-                                            hide_time.set(value);
-                                        })
-                                    }
-                                />
-                                {*hide_time}
-                            </div>
-                            <div>
-                                <label for="smooth_time">{"smooth_time"}</label>
-                                <input
-                                    id="smooth_time"
-                                    type="range" value={smooth_time.to_string()}
-                                    min="0.0" max="1.0" step="0.01"
-                                    oninput={
-                                        let smooth_time = smooth_time.clone();
-                                        Callback::from(move |e: InputEvent| {
-                                            let target = e.target().unwrap();
-                                            let target: HtmlInputElement = target.dyn_into().unwrap();
-                                            let value = target.value().parse::<f64>().unwrap();
-                                            smooth_time.set(value);
-                                        })
-                                    }
-                                />
-                                {*smooth_time}
-                            </div>
-                        </div>
-                        <section class="test-area-style">
-                            <ScrollArea
-                                vertical=true
-                                width={*width}
-                                round={*round}
-                                hide_time={*hide_time}
-                                smooth_time={*smooth_time}
-                            >
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
-                                <h1>{"Test Area"}</h1>
-                                <br />
-                                <br />
-                                <br />
-                                <p>{"This is a scrollable area."}</p>
-                                <br />
-                                <br />
-                                <br />
+                        </ScrollArea>
+                    </section>
+                </section>
+                <section>
+                    <h1>{"Colorize of scrollbar"}</h1>
+                    <p>
+                        {"Add "}
+                        <code>{"color={Color::rgba(128, 255, 0, 0.8)}"}</code>
+                        {" if you want to colorize scrollbars."}
+                    </p>
+                    <pre>
+                        <code class="language-rust">
+                            {
+r#"#[function_component(App)]
+fn app() -> Html {
+html!{
+    <div style="width: 100%; height: 100%;">
+        <ScrollArea vertical=true color={Color::rgba(128, 255, 0, 0.8)}>
+            { contents here ... }
+        </ScrollArea>
+    </div>
+}
+}"#
+                            }
+                        </code>
+                    </pre>
+                    <div class="test-area-color">
+                        <section class="test-area-color-0">
+                            <ScrollArea vertical=true  color={Color::rgba(128, 255, 0, 0.8)}>
                                 <h1>{"Test Area"}</h1>
                                 <br />
                                 <br />
@@ -782,10 +497,295 @@ fn app() -> Html {
                                 <h1>{"Test Area"}</h1>
                             </ScrollArea>
                         </section>
+                        <section class="test-area-color-1">
+                            <ScrollArea vertical=true color={Color::black()}>
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                            </ScrollArea>
+                        </section>
+                        <section class="test-area-color-2">
+                            <ScrollArea vertical=true color={Color::white()}>
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                                <br />
+                                <br />
+                                <br />
+                                <p>{"This is a scrollable area."}</p>
+                                <br />
+                                <br />
+                                <br />
+                                <h1>{"Test Area"}</h1>
+                            </ScrollArea>
+                        </section>
+                    </div>
+                </section>
+                <section>
+                    <h1>{"Other property of scrollbars"}</h1>
+                    <p>
+                        {"Add attributes "}
+                        <code>{"width"}</code>
+                        {", "}
+                        <code>{"round"}</code>
+                        {", "}
+                        <code>{"hide_time"}</code>
+                        {" and "}
+                        <code>{"smooth_time"}</code>
+                        {" for styling scrollbars."}
+                    </p>
+                    <pre>
+                        <code class="language-rust">
+                            {
+r#"#[function_component(App)]
+fn app() -> Html {
+html!{
+    <div style="width: 100%; height: 100%;">
+        <ScrollArea vertical=true width={4.0} round=false hide_time={0.5} smooth_time={0.3}>
+            { contents here ... }
+        </ScrollArea>
+    </div>
+}
+}"#
+                            }
+                        </code>
+                    </pre>
+                    <div class="test-area-style-inputs">
+                        <div>
+                            <label for="width">{"width"}</label>
+                            <input
+                                id="width"
+                                type="range" value={width.to_string()}
+                                min="0.0" max="40.0" step="0.01"
+                                oninput={
+                                    let width = width.clone();
+                                    Callback::from(move |e: InputEvent| {
+                                        let target = e.target().unwrap();
+                                        let target: HtmlInputElement = target.dyn_into().unwrap();
+                                        let value = target.value().parse::<f64>().unwrap();
+                                        width.set(value);
+                                    })
+                                }
+                            />
+                            {*width}
+                        </div>
+                        <div>
+                            <label for="round">{"round"}</label>
+                            <input
+                                id="round"
+                                type="checkbox"
+                                checked={*round}
+                                oninput={
+                                    let round = round.clone();
+                                    Callback::from(move |e: InputEvent| {
+                                        let target = e.target().unwrap();
+                                        let target: HtmlInputElement = target.dyn_into().unwrap();
+                                        let value = target.checked();
+                                        round.set(value);
+                                    })
+                                }
+                            />
+                        </div>
+                        <div>
+                            <label for="hide_time">{"hide_time"}</label>
+                            <input
+                                id="hide_time"
+                                type="range" value={hide_time.to_string()}
+                                min="0.0" max="10.0" step="0.01"
+                                oninput={
+                                    let hide_time = hide_time.clone();
+                                    Callback::from(move |e: InputEvent| {
+                                        let target = e.target().unwrap();
+                                        let target: HtmlInputElement = target.dyn_into().unwrap();
+                                        let value = target.value().parse::<f64>().unwrap();
+                                        hide_time.set(value);
+                                    })
+                                }
+                            />
+                            {*hide_time}
+                        </div>
+                        <div>
+                            <label for="smooth_time">{"smooth_time"}</label>
+                            <input
+                                id="smooth_time"
+                                type="range" value={smooth_time.to_string()}
+                                min="0.0" max="1.0" step="0.01"
+                                oninput={
+                                    let smooth_time = smooth_time.clone();
+                                    Callback::from(move |e: InputEvent| {
+                                        let target = e.target().unwrap();
+                                        let target: HtmlInputElement = target.dyn_into().unwrap();
+                                        let value = target.value().parse::<f64>().unwrap();
+                                        smooth_time.set(value);
+                                    })
+                                }
+                            />
+                            {*smooth_time}
+                        </div>
+                    </div>
+                    <section class="test-area-style">
+                        <ScrollArea
+                            vertical=true
+                            width={*width}
+                            round={*round}
+                            hide_time={*hide_time}
+                            smooth_time={*smooth_time}
+                        >
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <p>{"This is a scrollable area."}</p>
+                            <br />
+                            <br />
+                            <br />
+                            <h1>{"Test Area"}</h1>
+                        </ScrollArea>
                     </section>
-                </ScrollArea>
-            </div>
-        }
+                </section>
+            </ScrollArea>
+        </div>
+    }
 }
 
 fn main() {
