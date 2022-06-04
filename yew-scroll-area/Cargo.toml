@@ -9,6 +9,7 @@ repository = "https://github.com/MatchaChoco010/yew-scroll-area"
 readme = "../README.md"
 categories = ["web-programming", "wasm", "gui"]
 keywords = ["yew", "wasm", "gui", "scroll", "scrollbar"]
+include = ["src", "../README.md"]
 
 [dependencies]
 gloo = "0.7.0"
