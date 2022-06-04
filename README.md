@@ -1,6 +1,6 @@
 # yew-scroll-area
-[![crates.io](https://img.shields.io/crates/v/yew-scroll-area.svg)](https://crates.io/crates/yew-style-in-rs)
-[![docs.rs](https://docs.rs/yew-scroll-area/badge.svg)](https://docs.rs/yew-style-in-rs)
+[![crates.io](https://img.shields.io/crates/v/yew-scroll-area.svg)](https://crates.io/crates/yew-scroll-area)
+[![docs.rs](https://docs.rs/yew-scroll-area/badge.svg)](https://docs.rs/yew-scroll-area)
 [![yew version: 0.19.3](https://img.shields.io/badge/yew%20version-0.19.3-yellow)](https://docs.rs/egui/0.14.2/egui/index.html)
 
 Custom scroll area for yew.
