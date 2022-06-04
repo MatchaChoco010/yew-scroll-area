@@ -1,0 +1,19 @@
+[package]
+name = "yew-scroll-area"
+version = "0.1.0"
+authors = ["ORITO Itsuki <orito.itsuki@gmail.com>"]
+edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Custom scroll area component for yew"
+repository = "https://github.com/MatchaChoco010/yew-scroll-area"
+readme = "README.md"
+categories = ["web-programming", "wasm", "gui"]
+keywords = ["yew", "wasm", "gui", "scroll", "scrollbar"]
+
+[dependencies]
+gloo = "0.7.0"
+wasm-bindgen = "0.2.80"
+web-sys = { version = "0.3.57", features = ["HtmlDivElement"] }
+yew = "0.19.3"
+yew-hooks = "0.1.56"
+yew-style-in-rs = "0.3.2"
