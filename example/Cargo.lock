@@ -23,7 +23,7 @@ dependencies = [
  "wee_alloc",
  "yew",
  "yew-scroll-area",
- "yew-style-in-rs",
+ "yew-style-in-rs 0.3.2",
 ]
 
 [[package]]
@@ -781,14 +781,14 @@ dependencies = [
 
 [[package]]
 name = "yew-scroll-area"
-version = "0.1.2"
+version = "0.2.0"
 dependencies = [
  "gloo 0.7.0",
  "wasm-bindgen",
  "web-sys",
  "yew",
  "yew-hooks",
- "yew-style-in-rs",
+ "yew-style-in-rs 0.4.0",
 ]
 
 [[package]]
@@ -804,8 +804,25 @@ dependencies = [
  "once_cell",
  "web-sys",
  "yew",
- "yew-style-in-rs-core",
- "yew-style-in-rs-macro",
+ "yew-style-in-rs-core 0.3.2",
+ "yew-style-in-rs-macro 0.3.2",
+]
+
+[[package]]
+name = "yew-style-in-rs"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "328c3e9709161f8412bd3b43968804adb9c9e7485175a01c4ad9ca499a09c694"
+dependencies = [
+ "anyhow",
+ "fastrand",
+ "gloo 0.7.0",
+ "instant",
+ "once_cell",
+ "web-sys",
+ "yew",
+ "yew-style-in-rs-core 0.4.0",
+ "yew-style-in-rs-macro 0.4.0",
 ]
 
 [[package]]
@@ -813,6 +830,12 @@ name = "yew-style-in-rs-core"
 version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b0abe3d6b16ca4ef83b23570a2c1c7a88ff4e2fb49fe4dcbf1b57953af254bf7"
+
+[[package]]
+name = "yew-style-in-rs-core"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a90647d6b98d9ec6572dab61a4c8c2725d4e34136b7069e46b9dd2ddf16d34c0"
 
 [[package]]
 name = "yew-style-in-rs-macro"
@@ -830,5 +853,24 @@ dependencies = [
  "serde",
  "serde_json",
  "syn",
- "yew-style-in-rs-core",
+ "yew-style-in-rs-core 0.3.2",
+]
+
+[[package]]
+name = "yew-style-in-rs-macro"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fc1002f7d740e6ce7ba04a23de9f6cd14899f444930854f4db7ccb8c9efe07eb"
+dependencies = [
+ "anyhow",
+ "fastrand",
+ "fslock",
+ "libc",
+ "once_cell",
+ "proc-macro2",
+ "quote",
+ "serde",
+ "serde_json",
+ "syn",
+ "yew-style-in-rs-core 0.4.0",
 ]

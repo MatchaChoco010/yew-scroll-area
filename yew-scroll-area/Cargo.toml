@@ -1,6 +1,6 @@
 [package]
 name = "yew-scroll-area"
-version = "0.1.2"
+version = "0.2.0"
 authors = ["ORITO Itsuki <orito.itsuki@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -17,4 +17,11 @@ wasm-bindgen = "0.2.80"
 web-sys = { version = "0.3.57", features = ["HtmlDivElement"] }
 yew = "0.19.3"
 yew-hooks = "0.1.56"
-yew-style-in-rs = "0.3.2"
+yew-style-in-rs = "0.4.0"
+
+[features]
+default = []
+dry-run = ["yew-style-in-rs/dry-run"]
+
+[package.metadata.docs.rs]
+cargo-args = ["--features=dry-run"]

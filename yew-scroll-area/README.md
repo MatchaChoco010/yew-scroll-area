@@ -99,3 +99,18 @@ fn app() -> Html {
     }
 }
 ```
+
+## Features
+
+- `dry-run`: No write css file to disk. Without this feature, this crate depends on `yew-style-in-rs`, so create and write a CSS file to disk. This feature is useful for document build.
+
+If you would like to publish some components uses `yew-scroll-area` to crates.io, you might need to write following contents to Cargo.toml because crates.io docs build environment can't write filesystem:
+
+```toml
+[features]
+default = []
+dry-run = ["yew-style-in-rs/dry-run"]
+
+[package.metadata.docs.rs]
+cargo-args = ["--features=dry-run"]
+```
