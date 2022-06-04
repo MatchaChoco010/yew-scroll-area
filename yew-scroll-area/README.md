@@ -114,3 +114,9 @@ dry-run = ["yew-style-in-rs/dry-run"]
 [package.metadata.docs.rs]
 cargo-args = ["--features=dry-run"]
 ```
+
+You might need to publish with `dry-run`.
+
+```sh
+$ cargo publish --features dry-run
+```
