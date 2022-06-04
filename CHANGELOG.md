@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 Nothing
 
+## [0.1.2] - 2022-06-04
+### Changed
+- Fix documentation build.
+
 ## [0.1.1] - 2022-06-04
 ### Changed
 - Add documentations.
@@ -15,5 +19,6 @@ Nothing
 ### Added
 - Initial release.
 
+[0.1.1]: https://github.com/MatchaChoco010/yew-style-in-rs/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/MatchaChoco010/yew-style-in-rs/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/MatchaChoco010/yew-style-in-rs/tree/v0.1.0
