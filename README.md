@@ -5,6 +5,10 @@
 
 Custom scroll area for yew.
 
+https://user-images.githubusercontent.com/20170107/171973782-2107c1ec-a6c4-40c7-aa4d-78f58f1f9cdb.mp4
+
+[Demo](https://matchachoco010.github.io/yew-scroll-area/)
+
 ## example
 
 ```sh
