@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         working-directory: ./example/app
-        run: trunk build --release
+        run: trunk build --release --public-url yew-scroll-area/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
