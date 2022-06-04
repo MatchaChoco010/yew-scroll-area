@@ -16,5 +16,9 @@ $ cd example/app
 $ trunk serve --release
 ```
 
+## Usage
+
+[yew-scroll-area/README.md](/yew-scroll-area/README.md)
+
 ## License
 MIT OR Apache-2.0
