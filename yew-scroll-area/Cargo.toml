@@ -6,10 +6,10 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "Custom scroll area component for yew"
 repository = "https://github.com/MatchaChoco010/yew-scroll-area"
-readme = "../README.md"
+readme = "README.md"
 categories = ["web-programming", "wasm", "gui"]
 keywords = ["yew", "wasm", "gui", "scroll", "scrollbar"]
-include = ["src", "../README.md"]
+include = ["src", "README.md"]
 
 [dependencies]
 gloo = "0.7.0"
