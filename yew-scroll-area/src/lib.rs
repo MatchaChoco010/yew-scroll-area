@@ -1,4 +1,4 @@
-#![doc = include_str!("../../README.md")]
+#![doc = include_str!("../README.md")]
 
 use gloo::render::request_animation_frame;
 use gloo::timers::callback::Timeout;
