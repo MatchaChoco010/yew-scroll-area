@@ -32,12 +32,12 @@ fn smooth_damp(
     (output, current_velocity)
 }
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Properties)]
 pub struct Color {
-    r: u8,
-    g: u8,
-    b: u8,
-    a: f64,
+    pub r: u8,
+    pub g: u8,
+    pub b: u8,
+    pub a: f64,
 }
 impl Color {
     pub fn rgba(r: u8, g: u8, b: u8, a: f64) -> Self {
@@ -70,8 +70,8 @@ pub struct Props {
     pub width: f64,
     #[prop_or(true)]
     pub round: bool,
-    #[prop_or(1500)]
-    pub hide_time: u32,
+    #[prop_or(1.5)]
+    pub hide_time: f64,
     #[prop_or(0.15)]
     pub smooth_time: f64,
     pub children: Children,
@@ -85,7 +85,7 @@ pub fn scroll_area(props: &Props) -> Html {
         "rgba({}, {}, {}, {})",
         props.color.r, props.color.g, props.color.b, props.color.a
     );
-    let hide_time = props.hide_time;
+    let hide_time = (props.hide_time * 1000.0) as u32;
     let smooth_time = props.smooth_time;
 
     // States
