@@ -1,3 +1,5 @@
+#![doc = include_str!("../../README.md")]
+
 use gloo::render::request_animation_frame;
 use gloo::timers::callback::Timeout;
 use wasm_bindgen::JsCast;
@@ -32,6 +34,7 @@ fn smooth_damp(
     (output, current_velocity)
 }
 
+/// Color struct for ScrollArea's scrollbar.
 #[derive(Debug, Clone, Copy, PartialEq, Properties)]
 pub struct Color {
     pub r: u8,
@@ -58,6 +61,7 @@ impl Default for Color {
     }
 }
 
+/// Props for ScrollArea.
 #[derive(PartialEq, Properties)]
 pub struct Props {
     #[prop_or_default]
@@ -77,6 +81,7 @@ pub struct Props {
     pub children: Children,
 }
 
+/// ScrollArea component.
 #[function_component(ScrollArea)]
 pub fn scroll_area(props: &Props) -> Html {
     let horizontal = props.horizontal;
