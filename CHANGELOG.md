@@ -9,7 +9,7 @@ Nothing
 
 ## [0.2.0] - 2022-06-04
 ### Update
-- Update dependency `yew-style-in-rs` from v0.3.2 to v0.4.0.
+- Update dependency `yew-style-in-rs` from v0.3.2 to v0.4.1.
 ### Fix
 - Fix documentation build.
 

@@ -23,7 +23,7 @@ dependencies = [
  "wee_alloc",
  "yew",
  "yew-scroll-area",
- "yew-style-in-rs 0.3.2",
+ "yew-style-in-rs",
 ]
 
 [[package]]
@@ -153,25 +153,6 @@ dependencies = [
 
 [[package]]
 name = "gloo"
-version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f96605dc96adaffef27d911a805f0269d83ab89c1076e9c75ebac64a1a27215d"
-dependencies = [
- "gloo-console",
- "gloo-dialogs",
- "gloo-events",
- "gloo-file",
- "gloo-history",
- "gloo-net 0.1.0",
- "gloo-render",
- "gloo-storage",
- "gloo-timers",
- "gloo-utils",
- "gloo-worker",
-]
-
-[[package]]
-name = "gloo"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "03e691526c3972d1fda35453f6df29925edea014dc75a2dede7661527e9439f0"
@@ -181,7 +162,7 @@ dependencies = [
  "gloo-events",
  "gloo-file",
  "gloo-history",
- "gloo-net 0.2.0",
+ "gloo-net",
  "gloo-render",
  "gloo-storage",
  "gloo-timers",
@@ -246,26 +227,6 @@ dependencies = [
  "serde_urlencoded",
  "thiserror",
  "wasm-bindgen",
- "web-sys",
-]
-
-[[package]]
-name = "gloo-net"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2899cb1a13be9020b010967adc6b2a8a343b6f1428b90238c9d53ca24decc6db"
-dependencies = [
- "futures-channel",
- "futures-core",
- "futures-sink",
- "gloo-utils",
- "js-sys",
- "pin-project",
- "serde",
- "serde_json",
- "thiserror",
- "wasm-bindgen",
- "wasm-bindgen-futures",
  "web-sys",
 ]
 
@@ -788,31 +749,14 @@ dependencies = [
  "web-sys",
  "yew",
  "yew-hooks",
- "yew-style-in-rs 0.4.0",
+ "yew-style-in-rs",
 ]
 
 [[package]]
 name = "yew-style-in-rs"
-version = "0.3.2"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e12a8ba5a2739ff31f1069df4f90c046eb0730d30e2ca3d668cc42056820f21"
-dependencies = [
- "anyhow",
- "fastrand",
- "gloo 0.6.1",
- "instant",
- "once_cell",
- "web-sys",
- "yew",
- "yew-style-in-rs-core 0.3.2",
- "yew-style-in-rs-macro 0.3.2",
-]
-
-[[package]]
-name = "yew-style-in-rs"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "328c3e9709161f8412bd3b43968804adb9c9e7485175a01c4ad9ca499a09c694"
+checksum = "2aadc79ecf70f41d332398ead6f991c53d82c8da4a2fd927f9d103a9a950d843"
 dependencies = [
  "anyhow",
  "fastrand",
@@ -821,27 +765,21 @@ dependencies = [
  "once_cell",
  "web-sys",
  "yew",
- "yew-style-in-rs-core 0.4.0",
- "yew-style-in-rs-macro 0.4.0",
+ "yew-style-in-rs-core",
+ "yew-style-in-rs-macro",
 ]
 
 [[package]]
 name = "yew-style-in-rs-core"
-version = "0.3.2"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0abe3d6b16ca4ef83b23570a2c1c7a88ff4e2fb49fe4dcbf1b57953af254bf7"
-
-[[package]]
-name = "yew-style-in-rs-core"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a90647d6b98d9ec6572dab61a4c8c2725d4e34136b7069e46b9dd2ddf16d34c0"
+checksum = "151638a09d9c3ab94faf87c5d8c98984f6c42edc9f6e5c9affe94e7241bf35a8"
 
 [[package]]
 name = "yew-style-in-rs-macro"
-version = "0.3.2"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b59d2c4abbb043efe704fb37d02dfc066374961702c2f35a7aa687875d795eb7"
+checksum = "d94b48600e4ed31240bd4c7e322d39fba76fee591533ee45633ff0e6fb606643"
 dependencies = [
  "anyhow",
  "fastrand",
@@ -853,24 +791,5 @@ dependencies = [
  "serde",
  "serde_json",
  "syn",
- "yew-style-in-rs-core 0.3.2",
-]
-
-[[package]]
-name = "yew-style-in-rs-macro"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc1002f7d740e6ce7ba04a23de9f6cd14899f444930854f4db7ccb8c9efe07eb"
-dependencies = [
- "anyhow",
- "fastrand",
- "fslock",
- "libc",
- "once_cell",
- "proc-macro2",
- "quote",
- "serde",
- "serde_json",
- "syn",
- "yew-style-in-rs-core 0.4.0",
+ "yew-style-in-rs-core",
 ]

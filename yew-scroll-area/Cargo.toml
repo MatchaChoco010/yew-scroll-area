@@ -9,7 +9,7 @@ repository = "https://github.com/MatchaChoco010/yew-scroll-area"
 readme = "README.md"
 categories = ["web-programming", "wasm", "gui"]
 keywords = ["yew", "wasm", "gui", "scroll", "scrollbar"]
-include = ["src", "README.md", "Cargo.toml", "Cargo.lock"]
+include = ["src", "README.md"]
 
 [dependencies]
 gloo = "0.7.0"
@@ -17,7 +17,7 @@ wasm-bindgen = "0.2.80"
 web-sys = { version = "0.3.57", features = ["HtmlDivElement"] }
 yew = "0.19.3"
 yew-hooks = "0.1.56"
-yew-style-in-rs = "0.4.0"
+yew-style-in-rs = "0.4.1"
 
 [features]
 default = []
