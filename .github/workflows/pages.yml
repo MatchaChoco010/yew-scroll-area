@@ -18,7 +18,7 @@ jobs:
         uses: jetli/trunk-action@v0.1.0
 
       - name: Build
-        wowrking-directory: ./example/app
+        working-directory: ./example/app
         run: trunk build --release
 
       - name: Deploy
