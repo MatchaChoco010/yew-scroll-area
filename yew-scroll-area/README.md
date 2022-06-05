@@ -109,7 +109,7 @@ If you would like to publish some components uses `yew-scroll-area` to crates.io
 ```toml
 [features]
 default = []
-dry-run = ["yew-style-in-rs/dry-run"]
+dry-run = ["yew-scroll-area/dry-run"]
 
 [package.metadata.docs.rs]
 cargo-args = ["--features=dry-run"]
