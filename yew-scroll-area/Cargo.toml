@@ -1,6 +1,6 @@
 [package]
 name = "yew-scroll-area"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["ORITO Itsuki <orito.itsuki@gmail.com>"]
 edition = "2021"
 license = "MIT OR Apache-2.0"
@@ -13,11 +13,21 @@ include = ["src", "README.md"]
 
 [dependencies]
 gloo = "0.7.0"
+js-sys = "0.3.57"
 wasm-bindgen = "0.2.80"
-web-sys = { version = "0.3.57", features = ["HtmlDivElement"] }
 yew = "0.19.3"
 yew-hooks = "0.1.56"
 yew-style-in-rs = "0.4.1"
+
+[dependencies.web-sys]
+version = "0.3.57"
+features = [
+  "CustomEvent",
+  "CustomEventInit",
+  "Event",
+  "EventTarget",
+  "HtmlDivElement",
+]
 
 [features]
 default = []
