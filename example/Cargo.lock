@@ -18,6 +18,7 @@ checksum = "d301b3b94cb4b2f23d7917810addbbaff90738e0ca2be692bd027e70d7e0330c"
 name = "app"
 version = "0.1.0"
 dependencies = [
+ "gloo 0.7.0",
  "wasm-bindgen",
  "web-sys",
  "wee_alloc",
@@ -742,7 +743,7 @@ dependencies = [
 
 [[package]]
 name = "yew-scroll-area"
-version = "0.3.0"
+version = "0.4.0"
 dependencies = [
  "gloo 0.7.0",
  "js-sys",

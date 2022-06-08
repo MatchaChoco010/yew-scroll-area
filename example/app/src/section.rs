@@ -16,5 +16,5 @@ mod hide_time_section;
 pub use hide_time_section::*;
 mod custom_thumb_section;
 pub use custom_thumb_section::*;
-mod smooth_time;
-pub use smooth_time::*;
+mod smooth_option;
+pub use smooth_option::*;

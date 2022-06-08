@@ -4,14 +4,17 @@ use gloo::render::request_animation_frame;
 use yew::prelude::*;
 use yew_style_in_rs::*;
 
+mod color;
+mod default_thumb;
 mod hooks;
+mod scroll_option;
 mod utils;
+
+use default_thumb::*;
 use hooks::*;
 
-mod color;
 pub use color::Color;
-mod default_thumb;
-use default_thumb::*;
+pub use scroll_option::ScrollOption;
 
 /// Props for ScrollArea.
 #[derive(PartialEq, Properties)]
@@ -30,8 +33,8 @@ pub struct Props {
     pub round: bool,
     #[prop_or(Some(1.5))]
     pub hide_time: Option<f64>,
-    #[prop_or(0.15)]
-    pub smooth_time: f64,
+    #[prop_or_default]
+    pub scroll_option: ScrollOption,
     pub custom_vertical_thumb: Option<Html>,
     pub custom_horizontal_thumb: Option<Html>,
     pub children: Children,
@@ -48,7 +51,7 @@ pub fn scroll_area(props: &Props) -> Html {
     let draggable_width = props.draggable_width;
     let round = props.round;
     let hide_time = props.hide_time;
-    let smooth_time = props.smooth_time;
+    let scroll_option = props.scroll_option;
 
     // Node Refs
     let outer_ref = use_node_ref();
@@ -64,13 +67,13 @@ pub fn scroll_area(props: &Props) -> Html {
         outer_ref.clone(),
         inner_ref.clone(),
         horizontal_thumb_ref.clone(),
-        smooth_time,
+        scroll_option,
     );
     let vertical_state = use_vertical_state(
         outer_ref.clone(),
         inner_ref.clone(),
         vertical_thumb_ref.clone(),
-        smooth_time,
+        scroll_option,
     );
 
     // Animation Frame

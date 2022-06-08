@@ -167,7 +167,7 @@ pub fn custom_thumb_section() -> Html {
     }
     html! {
         <section class={css}>
-            <h1>{"Customize humb"}</h1>
+            <h1>{"Customize thumb"}</h1>
             <p>
                 {"Add "}
                 <code>{"custom_horizontal_thumb={html!(<YourComponent />)}"}</code>
