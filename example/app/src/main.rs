@@ -74,7 +74,7 @@ fn app() -> Html {
                 <WidthSection />
                 <HideTimeSection />
                 <CustomThumbSection />
-                <SmoothOptionSection />
+                <ScrollOptionSection />
             </ScrollArea>
         </div>
     }

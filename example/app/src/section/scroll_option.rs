@@ -4,8 +4,8 @@ use yew::prelude::*;
 use yew_scroll_area::*;
 use yew_style_in_rs::*;
 
-#[function_component(SmoothOptionSection)]
-pub fn smooth_option_section() -> Html {
+#[function_component(ScrollOptionSection)]
+pub fn scroll_option_section() -> Html {
     let mouse_wheel_smooth_time = use_state(|| 0.15);
     let mouse_drag_thumb_smooth_time = use_state(|| 0.05);
     let mouse_wheel_speed_scale = use_state(|| 1.0);
@@ -80,6 +80,9 @@ pub fn smooth_option_section() -> Html {
             </p>
             <p>
                 {"The smooth time can be specified for mouse wheel operation, dragging a knob with the mouse, swiping with a touch device, and dragging a knob with a touch device, respectively."}
+            </p>
+            <p>
+                {"In addition, a scroll speed scale can be specified."}
             </p>
             <pre>
                 <code class="language-rust">
