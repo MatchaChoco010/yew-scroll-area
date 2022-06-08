@@ -8,32 +8,10 @@ mod hooks;
 mod utils;
 use hooks::*;
 
-/// Color struct for ScrollArea's scrollbar.
-#[derive(Debug, Clone, Copy, PartialEq, Properties)]
-pub struct Color {
-    pub r: u8,
-    pub g: u8,
-    pub b: u8,
-    pub a: f64,
-}
-impl Color {
-    pub fn rgba(r: u8, g: u8, b: u8, a: f64) -> Self {
-        Self { r, g, b, a }
-    }
-
-    pub fn black() -> Self {
-        Self::rgba(0, 0, 0, 1.0)
-    }
-
-    pub fn white() -> Self {
-        Self::rgba(255, 255, 255, 1.0)
-    }
-}
-impl Default for Color {
-    fn default() -> Self {
-        Self::black()
-    }
-}
+mod color;
+pub use color::Color;
+mod default_thumb;
+use default_thumb::*;
 
 /// Props for ScrollArea.
 #[derive(PartialEq, Properties)]
@@ -46,12 +24,16 @@ pub struct Props {
     pub color: Color,
     #[prop_or(4.0)]
     pub width: f64,
+    #[prop_or(10.0)]
+    pub draggable_width: f64,
     #[prop_or(true)]
     pub round: bool,
-    #[prop_or(1.5)]
-    pub hide_time: f64,
+    #[prop_or(Some(1.5))]
+    pub hide_time: Option<f64>,
     #[prop_or(0.15)]
     pub smooth_time: f64,
+    pub custom_vertical_thumb: Option<Html>,
+    pub custom_horizontal_thumb: Option<Html>,
     pub children: Children,
 }
 
@@ -61,12 +43,10 @@ pub fn scroll_area(props: &Props) -> Html {
     // props
     let horizontal = props.horizontal;
     let vertical = props.vertical;
-    let color = format!(
-        "rgba({}, {}, {}, {})",
-        props.color.r, props.color.g, props.color.b, props.color.a
-    );
-    let thumb_width = props.width;
-    let thumb_round = if props.round { thumb_width / 2.0 } else { 0.0 };
+    let color = props.color;
+    let width = props.width;
+    let draggable_width = props.draggable_width;
+    let round = props.round;
     let hide_time = props.hide_time;
     let smooth_time = props.smooth_time;
 
@@ -135,20 +115,11 @@ pub fn scroll_area(props: &Props) -> Html {
                 width: 100%;
                 background: transparent;
                 position: absolute;
-                bottom: 4px;
+                bottom: 0;
                 left: 0;
-                display: flex;
-                flex-direction: column-reverse;
-                transform-origin: left;
+                opacity: 1;
+                transition: opacity 0.2s;
                 cursor: pointer;
-
-                &::before {
-                    content: " ";
-                    display: block;
-                    width: 100%;
-                    opacity: 1;
-                    transition: opacity 0.2s;
-                }
             }
 
             & > .vertical-thumb {
@@ -156,25 +127,16 @@ pub fn scroll_area(props: &Props) -> Html {
                 background: transparent;
                 position: absolute;
                 top: 0;
-                right: 4px;
-                display: flex;
-                flex-direction: row-reverse;
-                transform-origin: top;
+                right: 0;
+                opacity: 1;
+                transition: opacity 0.2s;
                 cursor: pointer;
-
-                &::before {
-                    content: " ";
-                    display: block;
-                    height: 100%;
-                    opacity: 1;
-                    transition: opacity 0.2s;
-                }
             }
 
-            &.hide > .horizontal-thumb::before {
+            &.hide > .horizontal-thumb {
                 opacity: 0;
             }
-            &.hide > .vertical-thumb::before {
+            &.hide > .vertical-thumb {
                 opacity: 0;
             }
         "#};
@@ -185,22 +147,12 @@ pub fn scroll_area(props: &Props) -> Html {
             & > .horizontal-thumb {
                 transform: translateX(${horizontal_thumb_position}px);
                 width: ${horizontal_thumb_size}px;
-                height: max(${thumb_width}px, min(24px, calc(20px + ${thumb_width}px)));
-                &::before {
-                    background-color: ${color};
-                    height: ${thumb_width}px;
-                    border-radius: ${thumb_round}px;
-                }
+                height: ${draggable_width}px;
             }
             & > .vertical-thumb {
                 transform: translateY(${vertical_thumb_position}px);
-                width: max(${thumb_width}px, min(24px, calc(20px + ${thumb_width}px)));
+                width: ${draggable_width}px;
                 height: ${vertical_thumb_size}px;
-                &::before {
-                    background-color: ${color};
-                    width: ${thumb_width}px;
-                    border-radius: ${thumb_round}px;
-                }
             }
         "#};
     }
@@ -210,10 +162,22 @@ pub fn scroll_area(props: &Props) -> Html {
                 {props.children.clone()}
             </div>
             if horizontal {
-                <div ref={horizontal_thumb_ref} class="horizontal-thumb" />
+                <div ref={horizontal_thumb_ref} class="horizontal-thumb">
+                    if let Some(custom_horizontal_thumb) = props.custom_horizontal_thumb.clone() {
+                        {custom_horizontal_thumb}
+                    } else {
+                        <DefaultHorizontalThumb {color} {width} {round}/>
+                    }
+                </div>
             }
             if vertical {
-                <div ref={vertical_thumb_ref} class="vertical-thumb" />
+                <div ref={vertical_thumb_ref} class="vertical-thumb">
+                    if let Some(custom_vertical_thumb) = props.custom_vertical_thumb.clone() {
+                        {custom_vertical_thumb}
+                    } else {
+                        <DefaultVerticalThumb {color} {width} {round}/>
+                    }
+                </div>
             }
         </div>
     }
