@@ -20,5 +20,17 @@ export function highlight() {
     [
       {start: 5, end: 5, color: 'rgba(128, 255, 196, 0.3)'},
     ],
+    [
+      {start: 5, end: 5, color: 'rgba(128, 255, 196, 0.3)'},
+    ],
+    [
+      {start: 5, end: 5, color: 'rgba(128, 255, 196, 0.3)'},
+    ],
+    [
+      {start: 5, end: 10, color: 'rgba(128, 255, 196, 0.3)'},
+    ],
+    [
+      {start: 5, end: 13, color: 'rgba(128, 255, 196, 0.3)'},
+    ],
   ]);
 }
