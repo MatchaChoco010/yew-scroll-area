@@ -1,31 +1,25 @@
-use gloo::events::EventListener;
 use gloo::timers::callback::Timeout;
-use gloo::utils::document;
 use std::cell::RefCell;
 use std::rc::Rc;
-use wasm_bindgen::JsCast;
 use yew::prelude::*;
 use yew_hooks::*;
 
 #[derive(Clone)]
 pub struct UseHideStateHandle {
     hide: UseStateHandle<bool>,
-    cursor_position: Rc<RefCell<(f32, f32)>>,
     timeout: Rc<RefCell<Option<Timeout>>>,
     outer_ref: NodeRef,
-    hide_time: f64,
+    hide_time: Option<f64>,
 }
 impl UseHideStateHandle {
     fn new(
         hide: UseStateHandle<bool>,
-        cursor_position: Rc<RefCell<(f32, f32)>>,
         timeout: Rc<RefCell<Option<Timeout>>>,
         outer_ref: NodeRef,
-        hide_time: f64,
+        hide_time: Option<f64>,
     ) -> Self {
         Self {
             hide,
-            cursor_position,
             timeout,
             outer_ref,
             hide_time,
@@ -33,28 +27,20 @@ impl UseHideStateHandle {
     }
 
     fn show(&self) {
-        self.hide.set(false);
-        let timeout = Timeout::new((self.hide_time * 1000.0) as u32, {
-            let hide = self.hide.clone();
-            move || hide.set(true)
-        });
-        self.timeout.replace(Some(timeout));
+        if let Some(hide_time) = self.hide_time {
+            self.hide.set(false);
+            let timeout = Timeout::new((hide_time * 1000.0) as u32, {
+                let hide = self.hide.clone();
+                move || hide.set(true)
+            });
+            self.timeout.replace(Some(timeout));
+        }
     }
-
-    fn use_mouse_position(&self) {
-        let this = self.clone();
-        use_effect_with_deps(
-            move |_| {
-                let document = document();
-                let listener = EventListener::new(&document, "mousemove", move |evt: &Event| {
-                    let evt = evt.dyn_ref::<web_sys::MouseEvent>().unwrap();
-                    *this.cursor_position.borrow_mut() =
-                        (evt.client_x() as f32, evt.client_y() as f32);
-                });
-                move || drop(listener)
-            },
-            (),
-        );
+    fn use_on_wheel(&self) {
+        use_event(self.outer_ref.clone(), "wheel", {
+            let this = self.clone();
+            move |_evt: MouseEvent| this.show()
+        });
     }
 
     fn use_on_mouseover(&self) {
@@ -94,13 +80,16 @@ impl UseHideStateHandle {
     }
 }
 
-pub fn use_hide_state(outer_ref: NodeRef, hide_time: f64) -> UseHideStateHandle {
-    let hide = use_state(|| true);
+pub fn use_hide_state(outer_ref: NodeRef, hide_time: Option<f64>) -> UseHideStateHandle {
+    let hide = use_state_eq(|| hide_time.is_some());
     let timeout = use_mut_ref(|| None);
-    let cursor_position = use_mut_ref(|| (0.0, 0.0));
 
-    let handle = UseHideStateHandle::new(hide, cursor_position, timeout, outer_ref, hide_time);
-    handle.use_mouse_position();
+    if hide_time.is_none() {
+        hide.set(false);
+    }
+
+    let handle = UseHideStateHandle::new(hide, timeout, outer_ref, hide_time);
+    handle.use_on_wheel();
     handle.use_on_mouseover();
     handle.use_on_mousemove();
     handle.use_on_touchstart();
